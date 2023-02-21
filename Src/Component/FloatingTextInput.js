@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { View, Animated, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
+import { View, Animated, StyleSheet, TextInput, Image, TouchableOpacity,Appearance } from 'react-native';
 import { string, func, object, number } from 'prop-types';
 import { Colors } from '../Resource/Colors';
 import { strings } from '../Resource/Strings';
 import { images } from '../Resource/Images';
+const colorScheme = Appearance.getColorScheme();
 
 export class FloatingTextInput extends Component {
   static propTypes = {
@@ -129,14 +130,14 @@ const Styles = StyleSheet.create({
     borderWidth: 0.5,
     height: 60,
     marginVertical: 5,
-    backgroundColor: 'rgba(255,255,255,0.1)',
+    backgroundColor:colorScheme=="dark"?'rgba(255,255,255,0.1)' :'#FAFAFA',
     flexDirection: "row"
   },
   textInput: {
     fontSize: 15,
     marginTop: 5,
     fontFamily: 'Avenir-Medium',
-    color: 'black',
+    color:Colors.themeColor,
     flex: 0.8,
   },
   titleStyles: {

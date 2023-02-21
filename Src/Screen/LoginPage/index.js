@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Image, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import CustomButton from '../../Component/CustomButton';
 import { images } from '../../Resource/Images';
 import { strings } from '../../Resource/Strings';
@@ -8,6 +8,10 @@ import Toast from 'react-native-simple-toast';
 import { Colors } from '../../Resource/Colors';
 import { FloatingTextInput } from '../../Component/FloatingTextInput';
 import LinearGradient from 'react-native-linear-gradient';
+import { BackArrow } from '../../Utility/svg/BackArrow';
+import InstaLogo from '../../Utility/svg/InstaLogo';
+import MetaLogo from '../../Utility/svg/MetaLogo';
+import OrView from '../../Component/OrView';
 
 const Login = (props) => {
     const [email, setEmail] = useState("")
@@ -19,6 +23,7 @@ const Login = (props) => {
         }
     }
     function signInProcess() {
+        props.navigation.navigate(strings.TabNavigation)
     }
     const _updateMasterState = (attrName, value) => {
         if (attrName === strings.attrName)
@@ -27,29 +32,30 @@ const Login = (props) => {
             setPassword(value)
     }
     return (
-        <LinearGradient colors={['#23395d', '#152238']} style={styles.container}>
-            <View style={styles.container}>
+        <LinearGradient colors={Colors.themeGradientColor} style={styles.container}>
+            <SafeAreaView style={styles.container}>
+            
                 <StatusBar
                     animated={true}
-                    backgroundColor={Colors.themeColor}
+                    backgroundColor={Colors.backgroundColor}
                 />
                 <ScrollView
                     keyboardShouldPersistTaps='handled'
                     style={styles.scrollViewStyle}
                     showsVerticalScrollIndicator={false}>
-                    <TouchableOpacity onPress={()=>props.navigation.goBack()}>
-                        <Image source={images.backArrow} style={styles.backImg} resizeMode={"contain"} />
+                    <TouchableOpacity style={{ marginHorizontal: 10, marginVertical: 30 }} onPress={() => props.navigation.goBack()}>
+                        <BackArrow />
                     </TouchableOpacity>
-                    <Text style={styles.txthintLabel}>{"English (India)"}</Text>
-
-                    <Image style={styles.imgLogo} source={images.instagram} resizeMode={"contain"} />
+                    <View style={styles.imgLogo} resizeMode={"contain"} >
+                        <InstaLogo />
+                    </View>
                     <FloatingTextInput
                         attrName={strings.attrName}
                         title={strings.emailHintText}
                         value={email}
                         updateMasterState={_updateMasterState}
                         textInputStyles={{ // here you can add additional TextInput styles
-                            color: Colors.white,
+                            color: Colors.themeColor,
                             fontSize: 15,
                             marginLeft: 8
                         }}
@@ -68,12 +74,14 @@ const Login = (props) => {
                             marginLeft: 8
 
                         }}
-
                         titleActiveColor={Colors.borderActive}
                         titleInactiveColor={Colors.borderInActive}
 
-
                     />
+                    <Text
+                        onPress={() => props.navigation.navigate(strings.forgetPassNav)}
+                        style={styles.txtForgetStyle}>{strings.txtForgetPassword}
+                    </Text>
                     <CustomButton
                         btnStyle={styles.signInBtn}
                         btnText={strings.signIn}
@@ -81,22 +89,19 @@ const Login = (props) => {
                         onPress={onPress}
                         btnFlag={"Log In"}
                     />
-                    <Text style={styles.txtForgetStyle}>{strings.txtForgetPassword}</Text>
-
+                    <TouchableOpacity style={{ flexDirection: "row", alignSelf: "center", marginVertical: 20 }}>
+                        <MetaLogo />
+                        <Text style={styles.txtfacebook}>{strings.txtFacebook}</Text>
+                    </TouchableOpacity>
+                    <OrView />
+                    <Text style={styles.txtdonthave}>{strings.donthave}
+                        <Text style={styles.txtsignup}>{"Sign up."}</Text>
+                    </Text>
                 </ScrollView>
-                <View style={styles.bottomView}>
-                    <CustomButton
-                        btnStyle={styles.contactBtn}
-                        btnText={strings.createNewAccount}
-                        btnTextStyle={styles.btnTextContactStyle}
-                        onPress={onPress}
-                        btnFlag={strings.createNewAccount}
-
-                    />
-                    <Text style={styles.txtDontHave}>{"Rushabh"}</Text>
-
+                <View style={styles.footerView}>
+                    <Text style={styles.txtfooter}>{strings.footerLAbel}</Text>
                 </View>
-            </View>
+            </SafeAreaView>
 
         </LinearGradient>
     )
