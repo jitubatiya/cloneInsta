@@ -16,6 +16,8 @@ const SplashScreen = (props) => {
             <StatusBar
                 animated={true}
                 backgroundColor={Colors.backgroundColor}
+                barStyle={Colors.barStyle}
+
             />
             <Image style={styles.imgLogo} source={images.logo} resizeMode={"contain"} />
             <View style={styles.footerView}>

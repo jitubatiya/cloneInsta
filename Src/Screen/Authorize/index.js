@@ -20,6 +20,8 @@ const Authorize = (props) => {
                 <StatusBar
                     animated={true}
                     backgroundColor={Colors.backgroundColor}
+                    barStyle={Colors.barStyle}
+
                 />
                 <View style={styles.imgLogo} resizeMode={"contain"} >
                     <InstaLogo />

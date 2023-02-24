@@ -38,6 +38,7 @@ const Login = (props) => {
                 <StatusBar
                     animated={true}
                     backgroundColor={Colors.backgroundColor}
+                    barStyle={Colors.barStyle}
                 />
                 <ScrollView
                     keyboardShouldPersistTaps='handled'

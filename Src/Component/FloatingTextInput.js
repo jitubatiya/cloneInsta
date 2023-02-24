@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import { View, Animated, StyleSheet, TextInput, Image, TouchableOpacity,Appearance } from 'react-native';
-import { string, func, object, number } from 'prop-types';
 import { Colors } from '../Resource/Colors';
 import { strings } from '../Resource/Strings';
 import { images } from '../Resource/Images';
 const colorScheme = Appearance.getColorScheme();
+import PropTypes from 'deprecated-react-native-prop-types';
 
 export class FloatingTextInput extends Component {
   static propTypes = {
-    attrName: string.isRequired,
-    title: string.isRequired,
-    value: string.isRequired,
-    updateMasterState: func.isRequired,
-    keyboardType: string,
-    titleActiveSize: number, // to control size of title when field is active
-    titleInActiveSize: number, // to control size of title when field is inactive
-    titleActiveColor: string, // to control color of title when field is active
-    titleInactiveColor: string, // to control color of title when field is active
-    textInputStyles: object,
-    otherTextInputProps: object,
+    attrName:PropTypes.string,
+    title: PropTypes.string,
+    value: PropTypes.string,
+    updateMasterState:PropTypes.func,
+    keyboardType:PropTypes.string,
+    titleActiveSize: PropTypes.number, // to control size of title when field is active
+    titleInActiveSize:PropTypes.number, // to control size of title when field is inactive
+    titleActiveColor:PropTypes.string, // to control color of title when field is active
+    titleInactiveColor:PropTypes.string, // to control color of title when field is active
+    textInputStyles:PropTypes.object,
+    otherTextInputProps: PropTypes.object,
   }
 
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Text, StyleSheet, View, Platform, Appearance } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
 import Home from '../Screen/TabScreen/Home';
 import Serach from '../Screen/TabScreen/Serach';
 import AddNew from '../Screen/TabScreen/AddNew';
@@ -20,16 +21,19 @@ const TabNavigation = (props) => {
 
     return (
         <Tab.Navigator
-           // shifting={true}
+            shifting={false}
             barStyle={styles.barStyle}
             labeled={false}
+            activeColor="#000000"
+            sceneAnimationEnabled={{ shifting: false, adaptive: false }}
+
             initialRouteName={"Home"}
             tabBarOptions={{
                 style: {
                     backgroundColor: Colors.backgroundColor,
                     borderTopWidth: 1,
                     paddingBottom: Platform.OS == "ios" ? 1 : 0,
-                },
+                }
             }}
 
         >
@@ -38,7 +42,7 @@ const TabNavigation = (props) => {
                 component={Home}
                 // listeners={{ tabPress: e => imageChange() }}
                 options={{
-                
+
                     tabBarIcon: ({ focused, color, size }) => (
                         <View style={styles.viewTabIcon}>
                             {!focused ?
@@ -71,7 +75,7 @@ const TabNavigation = (props) => {
                 options={{
                     tabBarIcon: ({ focused, color, size }) => (
                         <View style={styles.viewTabIcon}>
-                            <PlusIcon fillColor={Colors.themeColor}  width={24} height={24} />
+                            <PlusIcon fillColor={Colors.themeColor} width={24} height={24} />
                         </View>
                     ),
 
@@ -116,7 +120,7 @@ const styles = StyleSheet.create({
         //    paddingTop: Platform.OS == "ios" ? 0 : 8,
 
     },
-    barStyle:{ backgroundColor: Colors.backgroundColor, height: 80,borderWidth:1,borderColor:'#0000001A' }
+    barStyle: { backgroundColor: Colors.backgroundColor, height: 80, borderWidth: 1, borderColor: '#0000001A', }
 })
 
 export default TabNavigation;
