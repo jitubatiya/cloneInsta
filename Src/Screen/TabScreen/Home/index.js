@@ -110,7 +110,7 @@ const Home = (props) => {
                 />
 
                 <View style={styles.footerView}>
-                    <View style={{ flexDirection: "row", flex: 0.4 }}>
+                    <View style={{ flexDirection: "row", flex: 0.4, }}>
                         <TouchableOpacity>
                             <LikeIcon />
                         </TouchableOpacity>
@@ -121,15 +121,27 @@ const Home = (props) => {
                             <Messanger />
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: "row", flex: 0.6, justifyContent: "space-between" }}>
-                        {/* <View style={{flex:0.6}}></View> */}
+                    <View style={styles.paginationStyle}>
                         {pagination(dummyImageData)}
-
                         <TouchableOpacity  >
                             <SaveIcon />
                         </TouchableOpacity>
                     </View>
+
                 </View>
+                <View style={styles.likeView}>
+                    <Image style={styles.imgLikeUser} source={images.oval} resizeMode={"contain"} />
+                    <Text style={styles.txtLikeBy}>{"Liked by"}
+                        <Text style={styles.txtLikeNameBy}>{" craig_love "}
+                            <Text style={styles.txtLikeBy}>{" and "}
+                                <Text style={styles.txtLikeNameBy}>{"44,686 others"}</Text>
+                            </Text>
+                        </Text>
+                    </Text>
+                </View>
+                <Text style={[styles.txtLikeNameBy,{ bottom: 15, marginHorizontal: 15 }]}>joshua_l
+                    <Text style={styles.txtLikeBy}> The game in Japan was amazing and I want to share some photos</Text>
+                </Text>
             </View>
         )
     }
@@ -139,16 +151,24 @@ const Home = (props) => {
                 dotsLength={data?.length}
                 activeDotIndex={activeSlide}
                 carouselRef={CoursalRef}
-
+                containerStyle={{
+                    width: 6,
+                    height: 6,
+                    top: -20,
+                    marginLeft: 20
+                }}
                 dotStyle={{
                     width: 6,
                     height: 6,
-                    backgroundColor: "#3897F0"
+                    backgroundColor: "#3897F0",
+                    // marginHorizontal:10
+
+
                 }}
                 dotContainerStyle={{
-                    marginHorizontal: 3,
-                    top: -20,
-                    alignSelf: "flex-start"
+                    marginHorizontal: 6,
+                    // top: -20,
+                    // alignSelf: "flex-start"
                 }}
                 inactiveDotOpacity={0.4}
                 inactiveDotScale={1}

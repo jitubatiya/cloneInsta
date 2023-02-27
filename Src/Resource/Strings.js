@@ -20,6 +20,10 @@ export const strings={
     forgetPassNav:"ForgetPassword",
     LoginNav:"Login",
     authorizeNav:"Authorize",
-    TabNavigation:"tabNavigation"
+    TabNavigation:"tabNavigation",
+
+
+    //serach screen
+    searchPlaceholder:"Search"
 
 }

@@ -84,8 +84,25 @@ const styles = StyleSheet.create({
     },
     footerView:{
         flexDirection:"row",
-        margin:15,
-        flex:1
-    }
+        marginHorizontal:15,
+        marginTop:10
+    
+      //  height:30,
+    },
+    paginationStyle:{ flexDirection: "row", flex: 0.6, justifyContent: "space-between" },
+    txtLikeBy:{
+        fontSize:13,
+        color:Colors.themeColor,
+        fontWeight:"400",
+        lineHeight:18
+    },
+    txtLikeNameBy:{
+        fontSize:13,
+        color:Colors.themeColor,
+        fontWeight:"600",
+        lineHeight:18
+    },
+    likeView:{ flexDirection: "row", bottom: 20, marginHorizontal: 15, alignItems: "center" },
+    imgLikeUser:{ height: 17, width: 17, marginRight: 8 }
 })
 export default styles
