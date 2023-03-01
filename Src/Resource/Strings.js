@@ -21,9 +21,27 @@ export const strings={
     LoginNav:"Login",
     authorizeNav:"Authorize",
     TabNavigation:"tabNavigation",
+    editscreen:"edit",
 
 
     //serach screen
-    searchPlaceholder:"Search"
+    searchPlaceholder:"Search",
+
+    //likes screen
+    message:"Message",
+    follow:"Follow",
+
+    //profile
+    txtEdit:"Edit Profile",
+    posts:"Posts",
+    followers:"Followers",
+    following:"Following",
+
+    //edit profile
+    cancel:"Cancel",
+    editProfile:"Edit Profile",
+    done:"Done",
+    txtchangeprofilelbl:"Change Profile Photo"
+
 
 }

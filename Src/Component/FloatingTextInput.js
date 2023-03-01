@@ -4,7 +4,7 @@ import { Colors } from '../Resource/Colors';
 import { strings } from '../Resource/Strings';
 import { images } from '../Resource/Images';
 const colorScheme = Appearance.getColorScheme();
-import PropTypes from 'deprecated-react-native-prop-types';
+import PropTypes,{ViewPropTypes} from 'deprecated-react-native-prop-types';
 
 export class FloatingTextInput extends Component {
   static propTypes = {

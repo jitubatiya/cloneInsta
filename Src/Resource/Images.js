@@ -20,4 +20,21 @@ export const images={
     dummyImg2:require("../Assets/Images/dummyImg2.jpg"),
     dummyImg3:require("../Assets/Images/dummyImg3.png"),
     dummyImg4:require("../Assets/Images/dummyImg4.png"),
+    privateIcon:require("../Assets/Images/privateIcon.png"),
+    down:require("../Assets/Images/Down.png"),
+    menu:require("../Assets/Images/Menu.png"),
+    gridView:require("../Assets/Images/GridView.png"),
+    gridProfile:require("../Assets/Images/GridProfile.png"),
+
+    //drawerImage
+    facebook:require("../Assets/Images/facebook.png"),
+    disPeople:require("../Assets/Images/disPeople.png"),
+    closeFriend:require("../Assets/Images/closeFriend.png"),
+    saved:require("../Assets/Images/saved.png"),
+    nameTag:require("../Assets/Images/nameTag.png"),
+    activity:require("../Assets/Images/activity.png"),
+    archive:require("../Assets/Images/archive.png"),
+    settings:require("../Assets/Images/settings.png"),
+
+
 }
